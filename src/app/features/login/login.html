@@ -1,0 +1,31 @@
+<main class="acceso">
+    <div class="acceso__tarjeta">
+        <div class="acceso__pestañas" role="tablist">
+            <button type="button" class="acceso__pestaña" [class.acceso__pestaña--activa]="modo === 'login'"
+                (click)="cambiarModo('login')">Iniciar sesión
+            </button>
+            <button type="button" class="acceso__pestaña" [class.acceso__pestaña--activa]="modo === 'registro'"
+                (click)="cambiarModo('registro')">Registrarse
+            </button>
+        </div>
+        <form class="acceso__formulario" *ngIf="modo === 'login'">
+            <label class="acceso__etiqueta" for="login-email">Correo electrónico</label>
+            <input class="acceso__campo" id="login-email" type="email" placeholder="tucorreo@ejemplo.com">
+            <label class="acceso__etiqueta" for="loginpassword">Contraseña</label>
+            <input class="acceso__campo" id="login-password" type="password" placeholder="••••••••">
+            <a class="acceso__enlace-secundario" aria-disabled="true" tabindex="-1">¿Has olvidado tu contraseña?</a>
+            <button type="submit" class="acceso__boton" disabled>Entrar</button>
+        </form>
+        <form class="acceso__formulario" *ngIf="modo === 'registro'">
+            <label class="acceso__etiqueta" for="registro-nombre">Nombre
+                completo</label>
+            <input class="acceso__campo" id="registro-nombre" type="text" placeholder="Nombre y apellidos">
+            <label class="acceso__etiqueta" for="registro-email">Correo
+                electrónico</label>
+            <input class="acceso__campo" id="registro-email" type="email" placeholder="tucorreo@ejemplo.com">
+            <label class="acceso__etiqueta" for="registropassword">Contraseña</label>
+            <input class="acceso__campo" id="registro-password" type="password" placeholder="••••••••">
+            <button type="submit" class="acceso__boton" disabled>Crear cuenta</button>
+        </form>
+    </div>
+</main>
