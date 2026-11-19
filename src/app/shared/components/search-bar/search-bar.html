@@ -1,0 +1,13 @@
+
+<div class="search-container">
+    <span class="search-icon">⌕</span>
+  
+    <!-- Input de búsqueda y como vaya escribiendo pues va buscando el juego que contenga ese nombre -->
+    <input
+    #busqueda
+    type="text"
+    placeholder="Buscar videojuego..."
+    (input)="buscar(busqueda.value)"
+    >
+  </div>
+  

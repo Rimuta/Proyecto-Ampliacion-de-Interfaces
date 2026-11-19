@@ -1,0 +1,24 @@
+
+<div class="categoria-container">
+
+  <h1>{{ nombreCategoria() }}</h1>
+
+  <div class="games-container">
+    <!-- Mostrar los juegos filtrados por categoría -->
+    @for (juego of juegos(); track juego.id) {
+      <app-game-card
+        [id]="juego.id"
+        [title]="juego.title"
+        [platform]="juego.platform"
+        [price]="juego.price"
+        [condition]="juego.condition"
+        [image]="juego.image"
+        [category]="juego.category"
+      />
+    } @empty {
+      <p>No hay videojuegos disponibles en esta categoría 🎮🎳🍕</p>
+    }
+
+  </div>
+
+</div>

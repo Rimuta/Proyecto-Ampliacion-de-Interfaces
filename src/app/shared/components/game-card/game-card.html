@@ -1,0 +1,22 @@
+
+<div class="game-card">
+    <div class="game-image">
+      <img [src]="image" [alt]="title">
+      <span class="condition">{{ condition }}</span>
+    </div>
+  
+    <div class="game-info">
+      <span class="category">{{ category }}</span>
+      <h3>{{ title }}</h3>
+      <p class="platform">{{ platform }}</p>
+  
+      <div class="game-bottom">
+        <span class="price">{{ price }} €</span>
+        <!--Esto es para que si da a ver detalles, va a la página de detalles de ese videojuego-->
+        <a [routerLink]="['/juego', id]">
+        <button type="button" >Ver detalles</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,97 @@
+.game-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+  color: white;
+  background: #171a25;
+  border: 1px solid #292e40;
+  border-radius: 16px;
+}
+
+.game-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.game-form__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c4c7d2;
+}
+
+.game-form__control {
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: white;
+  background: #0f111a;
+  border: 1px solid #34394d;
+  border-radius: 10px;
+}
+
+.game-form__control::placeholder {
+  color: #85899b;
+}
+
+.game-form__control:focus {
+  outline: none;
+  border-color: #8b5cf6;
+}
+
+.game-form__control--area {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.game-form__control--error,
+.game-form__control--error:focus {
+  border-color: #f87171;
+}
+
+.game-form__ayuda {
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.game-form__error {
+  margin: 0;
+  font-size: 12px;
+  color: #f87171;
+}
+
+.game-form__submit {
+  align-self: flex-start;
+  padding: 13px 24px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: #7c3aed;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.game-form__submit:hover {
+  background: #6d28d9;
+}
+
+.game-form__submit:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .game-form__row {
+    grid-template-columns: 1fr;
+  }
+}

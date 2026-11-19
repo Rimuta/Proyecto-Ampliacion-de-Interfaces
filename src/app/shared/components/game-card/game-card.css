@@ -1,0 +1,83 @@
+
+.game-card {
+    background: #171a25;
+    border: 1px solid #292e40;
+    border-radius: 14px;
+    overflow: hidden;
+    color: white;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+  }
+  
+  .game-image {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .condition {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #16a34a;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+  }
+  
+  .game-info {
+    padding: 16px;
+  }
+  
+  .category {
+    color: #a78bfa;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  h3 {
+    margin: 8px 0;
+    font-size: 18px;
+  }
+  
+  .platform {
+    color: #9ca3af;
+    font-size: 13px;
+  }
+  
+  .game-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+  }
+  
+  .price {
+    color: #4ade80;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  
+  button {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 12px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #6d28d9;
+  }
+  

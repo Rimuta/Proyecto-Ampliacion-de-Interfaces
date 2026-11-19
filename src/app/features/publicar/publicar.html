@@ -1,0 +1,20 @@
+<main class="publicar">
+  <header class="publicar__cabecera">
+    <h1 class="publicar__titulo">Vende tu videojuego</h1>
+    <p class="publicar__subtitulo">Rellena los datos y tu juego aparecerá en el catálogo.</p>
+  </header>
+
+  @if (publicado(); as juego) {
+    <section class="publicar__exito" role="status">
+      <p class="publicar__exito-texto">
+        <strong>{{ juego.title }}</strong> publicado por {{ juego.price }} €.
+      </p>
+      <div class="publicar__exito-acciones">
+        <a class="publicar__enlace" routerLink="/catalogo">Ver el catálogo</a>
+        <button type="button" class="publicar__cerrar" (click)="cerrarAviso()">Cerrar</button>
+      </div>
+    </section>
+  }
+
+  <app-game-form (gameSubmit)="onGameSubmit($event)" />
+</main>

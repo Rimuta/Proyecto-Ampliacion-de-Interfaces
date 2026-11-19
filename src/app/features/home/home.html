@@ -1,0 +1,38 @@
+<main class="home">
+
+    <section class="hero">
+      <div class="slides" aria-hidden="true">
+        <figure class="slide" style="--img:url('img/zelda.jpg'); --fondo:linear-gradient(135deg,#0b3d0b,#107c10)"><figcaption>Xbox</figcaption></figure>
+        <figure class="slide" style="--img:url('img/gtVI.jpg'); --fondo:linear-gradient(135deg,#0a1f55,#0070d1)"><figcaption>PlayStation</figcaption></figure>
+        <figure class="slide" style="--img:url('img/issac.jpg'); --fondo:linear-gradient(135deg,#1b1b2f,#4b0f4f)"><figcaption>PC</figcaption></figure>
+        <figure class="slide" style="--img:url('img/marioKarl.jpg'); --fondo:linear-gradient(135deg,#7a0a14,#e60012)"><figcaption>Nintendo</figcaption></figure>
+      </div>
+
+      <div class="hero-texto">
+        <h1>Dale una segunda vida a tus videojuegos</h1>
+        <p>Compramos juegos usados, los revisamos uno a uno y los revendemos a buen precio.</p>
+      </div>
+    </section>
+    
+    <section class="destacados">
+        <h2 class="section-title">Juegos destacados</h2>
+
+        <!-- Mostrar los juegos filtrados por categoría -->
+        <div class="games-container">
+            @for (juego of juegosFiltrados; track juego.id) {
+                <app-game-card
+                [id]="juego.id"
+                [title]="juego.title"
+                [platform]="juego.platform"
+                [price]="juego.price"
+                [condition]="juego.condition"
+                [image]="juego.image"
+                [category]="juego.category"
+                />
+            } @empty {
+                <p>No se han encontrado videojuegos.</p>
+            }
+        </div>
+  </section>
+
+</main>

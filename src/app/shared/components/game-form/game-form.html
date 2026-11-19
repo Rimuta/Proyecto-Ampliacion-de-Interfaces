@@ -1,0 +1,101 @@
+<form class="game-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="game-form__field">
+    <label class="game-form__label" for="game-title">Título</label>
+    <input
+      class="game-form__control"
+      [class.game-form__control--error]="invalid('title')"
+      id="game-title"
+      type="text"
+      formControlName="title"
+      placeholder="Ej. Mario Kart 8 Deluxe"
+      autocomplete="off">
+    @if (invalid('title')) {
+      <p class="game-form__error" role="alert">Escribe el título (entre 3 y 60 caracteres).</p>
+    }
+  </div>
+
+  <div class="game-form__row">
+    <div class="game-form__field">
+      <label class="game-form__label" for="game-platform">Plataforma</label>
+      <select
+        class="game-form__control"
+        [class.game-form__control--error]="invalid('platform')"
+        id="game-platform"
+        formControlName="platform">
+        <option value="" disabled>Elige una plataforma</option>
+        @for (p of platforms; track p.name) {
+          <option [value]="p.name">{{ p.name }}</option>
+        }
+      </select>
+      @if (invalid('platform')) {
+        <p class="game-form__error" role="alert">Elige una plataforma.</p>
+      }
+    </div>
+
+    <div class="game-form__field">
+      <label class="game-form__label" for="game-condition">Estado</label>
+      <select
+        class="game-form__control"
+        [class.game-form__control--error]="invalid('condition')"
+        id="game-condition"
+        formControlName="condition">
+        <option value="" disabled>Elige el estado</option>
+        @for (c of conditions; track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+      @if (invalid('condition')) {
+        <p class="game-form__error" role="alert">Indica si es nuevo o de segunda mano.</p>
+      }
+    </div>
+  </div>
+
+  <div class="game-form__field">
+    <label class="game-form__label" for="game-price">Precio (€)</label>
+    <input
+      class="game-form__control"
+      [class.game-form__control--error]="invalid('price')"
+      id="game-price"
+      type="number"
+      step="0.01"
+      min="0"
+      formControlName="price"
+      placeholder="0,00">
+    @if (invalid('price')) {
+      <p class="game-form__error" role="alert">Introduce un precio entre 0,01 € y 999 €.</p>
+    }
+  </div>
+
+  <div class="game-form__field">
+    <label class="game-form__label" for="game-image">Imagen (enlace, opcional)</label>
+    <input
+      class="game-form__control"
+      [class.game-form__control--error]="invalid('image')"
+      id="game-image"
+      type="url"
+      formControlName="image"
+      placeholder="https://…"
+      autocomplete="off">
+    <p class="game-form__ayuda">Si lo dejas vacío, se usará una imagen por defecto.</p>
+    @if (invalid('image')) {
+      <p class="game-form__error" role="alert">El enlace debe empezar por http:// o https://.</p>
+    }
+  </div>
+
+  <div class="game-form__field">
+    <label class="game-form__label" for="game-description">Descripción</label>
+    <textarea
+      class="game-form__control game-form__control--area"
+      [class.game-form__control--error]="invalid('description')"
+      id="game-description"
+      rows="4"
+      formControlName="description"
+      placeholder="Estado del juego, qué incluye, si es físico o digital…"></textarea>
+    <p class="game-form__ayuda">{{ form.controls.description.value.length }}/500</p>
+    @if (invalid('description')) {
+      <p class="game-form__error" role="alert">Describe el juego (entre 10 y 500 caracteres).</p>
+    }
+  </div>
+
+  <button type="submit" class="game-form__submit">{{ submitText }}</button>
+</form>

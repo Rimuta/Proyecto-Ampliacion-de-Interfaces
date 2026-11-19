@@ -1,0 +1,27 @@
+<header class="cabecera">
+    <div class="cabecera__fila">
+        <a routerLink="/home" class="cabecera__marca">
+            <span class="cabecera__logo" aria-hidden="true"></span>
+            <span class="cabecera__titulo" style="color:#a78bfa;">GameSwap</span>
+        </a>
+        <input type="checkbox" id="cabecera-toggle" class="cabecera__toggle-input">
+        <label for="cabecera-toggle" class="cabecera__toggle-boton" aria-label="Abrir menú">
+        </label>
+        <app-search-bar (searchChange)="buscarJuego($event)"/>
+        <nav class="cabecera__nav" aria-label="Navegación principal">
+            <details class="cabecera__submenu">
+                <summary class="cabecera__enlace">Categorias</summary>
+                <!--Esto es para que al dar a la categoria, te lleve a la pagina de esa categoria-->
+                <ul class="cabecera__submenu-lista">
+                    <li><a routerLink="/categoria/Xbox" style="color:#a78bfa; text-decoration:none;">Xbox</a></li>
+                    <li><a routerLink="/categoria/PlayStation" style="color:#a78bfa; text-decoration:none;">PlayStation</a></li>
+                    <li><a routerLink="/categoria/PC" style="color:#a78bfa; text-decoration:none;">PC</a></li>
+                    <li><a routerLink="/categoria/Nintendo" style="color:#a78bfa; text-decoration:none;">Nintendo</a></li>
+                </ul>
+            </details>
+            <a routerLink="/publicar" style="color:#a78bfa; text-decoration:none;">Vender</a>
+            <a routerLink="/favoritos" style="color:#a78bfa; text-decoration:none;">Favoritos</a>
+            <a routerLink="/login" class="cabecera__enlace cabecera__enlace--login">🕵️</a>
+        </nav>
+    </div>
+</header>

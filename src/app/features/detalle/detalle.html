@@ -1,0 +1,42 @@
+<div class="detail-container">
+
+  <a routerLink="/catalogo" class="back-button">← Volver al catálogo</a>
+
+  @if (game) {
+    <div class="detail-card">
+
+      <div class="detail-image">
+        <img [src]="game.image" [alt]="game.title">
+      </div>
+
+      <div class="detail-info">
+
+        <span class="category">{{ game.category }}</span>
+
+        <h1>{{ game.title }}</h1>
+
+        <p class="platform">{{ game.platform }}</p>
+
+        <span class="condition">{{ game.condition }}</span>
+
+        <h2 class="price">{{ game.price }} €</h2>
+
+        <div class="description">
+          <h3>Descripción</h3>
+          <p>{{ game.description }}</p>
+        </div>
+
+        <button class="favorite-button" (click)="toggleFavorite()">
+          {{ favorite ? '❤️ En favoritos' : '♡ Añadir a favoritos' }}
+        </button>
+
+      </div>
+    </div>
+  } @else {
+    <app-empty-state
+      title="Videojuego no encontrado"
+      message="Puede que se haya retirado o que el enlace no sea correcto." />
+  }
+
+</div>
+  

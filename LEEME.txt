@@ -1,0 +1,18 @@
+GAMESWAP - MI PARTE (modelo, servicios, publicar, favoritos)
+
+INSTALACION:
+1. Copiar src/app/core/games        -> src/app/core/games
+2. Copiar src/app/shared/components/game-form -> src/app/shared/components/game-form
+3. Copiar src/app/features/publicar  -> src/app/features/publicar
+4. Copiar src/app/features/favoritos -> src/app/features/favoritos
+5. Pegar DOCUMENTACION-MI-PARTE.md junto a la DOCUMENTACION.md de Alex.
+
+app.routes.ts (antes de la ruta '**'):
+  import { Publicar } from './features/publicar/publicar';
+  import { Favoritos } from './features/favoritos/favoritos';
+  { path: 'publicar', component: Publicar },
+  { path: 'favoritos', component: Favoritos },
+
+header.html:
+  <a routerLink="/publicar" routerLinkActive="cabecera__enlace--activo" class="cabecera__enlace">Vender</a>
+  <a routerLink="/favoritos" routerLinkActive="cabecera__enlace--activo" class="cabecera__enlace">Favoritos</a>

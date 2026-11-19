@@ -1,59 +1,60 @@
-# GameswapTest
+# GameSwap
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+## Descripción
 
-## Development server
+GameSwap es una aplicación web SPA desarrollada con Angular que permite a los usuarios comprar y vender videojuegos de segunda mano. Los usuarios pueden publicar sus propios productos indicando su título, plataforma, categoría, precio e imagen, para que otros usuarios puedan consultar los videojuegos disponibles en la plataforma.
 
-To start a local development server, run:
+## Características Principales
 
-```bash
-ng serve
-```
+- **Catálogo de videojuegos:** permite visualizar los diferentes videojuegos publicados mediante tarjetas con información del producto.
+- **Publicación de productos:** permite a los usuarios subir videojuegos a la plataforma indicando sus características y estableciendo un precio de venta.
+- **Búsqueda y filtrado:** permite localizar videojuegos mediante una barra de búsqueda y navegar por las diferentes categorías.
+- **Detalles del producto:** permite consultar la información de cada videojuego.
+- **Sistema de favoritos:** permite guardar videojuegos para consultarlos posteriormente.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologías Utilizadas
 
-## Code scaffolding
+- **Framework:** Angular 22.2.6
+- **Lenguaje:** TypeScript
+- **Styling:** CSS3
+- **Routing:** Angular Router
+- **Almacenamiento:** LocalStorage
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación y/o configuración
 
-```bash
-ng generate component component-name
-```
+1. Clonar el repositorio:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   git clone https://github.com/Rimuta/Proyecto-Ampliacion-de-Interfaces.git
+   ```
 
-```bash
-ng generate --help
-```
+2. Acceder a la carpeta del proyecto:
 
-## Building
+   ```bash
+   cd gameswap
+   ```
 
-To build the project run:
+3. Instalar las dependencias necesarias:
 
-```bash
-ng build
-```
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. Ejecutar la aplicación:
 
-## Running unit tests
+   ```bash
+   ng serve -o
+   ```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+5. Abrir la aplicación en el navegador:
 
-```bash
-ng test
-```
+   ```text
+   http://localhost:4200/
+   ```
 
-## Running end-to-end tests
+### Prerrequisitos
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Node.js:** versión 26.13.1.
+- **npm:** versión 11.20.0.
+- **Angular CLI:** 22.2.7
+- **Editor de código:** Visual Studio Code.

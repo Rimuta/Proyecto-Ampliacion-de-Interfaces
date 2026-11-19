@@ -1,0 +1,13 @@
+
+<div class="category-container">
+    @for (category of categories; track category) {
+      <button
+        type="button"
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </button>
+    }
+  </div>
+  

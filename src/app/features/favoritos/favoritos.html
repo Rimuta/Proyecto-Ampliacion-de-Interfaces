@@ -1,0 +1,36 @@
+<main class="favoritos">
+  <header class="favoritos__cabecera">
+    <div>
+      <h1 class="favoritos__titulo">Mis favoritos</h1>
+      <p class="favoritos__subtitulo" aria-live="polite">
+        {{ favService.count() === 1 ? '1 videojuego guardado' : favService.count() + ' videojuegos guardados' }}
+      </p>
+    </div>
+    @if (favService.count() > 0) {
+      <button type="button" class="favoritos__vaciar" (click)="vaciar()">Vaciar lista</button>
+    }
+  </header>
+
+  @if (favService.favorites().length > 0) {
+    <section class="favoritos__lista">
+      @for (game of favService.favorites(); track game.id) {
+        <div class="favoritos__item">
+          <app-game-card
+            [title]="game.title"
+            [platform]="game.platform"
+            [price]="game.price"
+            [condition]="game.condition"
+            [image]="game.image"
+            [category]="game.category" />
+          <button type="button" class="favoritos__quitar" (click)="quitar(game.id)">
+            Quitar de favoritos
+          </button>
+        </div>
+      }
+    </section>
+  } @else {
+    <app-empty-state
+      title="Aún no tienes favoritos"
+      message="Marca un videojuego como favorito desde su ficha y aparecerá aquí." />
+  }
+</main>
